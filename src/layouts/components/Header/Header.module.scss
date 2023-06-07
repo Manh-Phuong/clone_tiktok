@@ -1,0 +1,91 @@
+.wrapper {
+    width: 100%;
+    height: 60px;
+    background-color: var(--white-color);
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 1px;
+    position: fixed;
+}
+
+.inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 7px 24px 0 16px;
+    width: 100%;
+}
+
+.logo {
+    display: flex;
+}
+
+.more-btn {
+    font-size: 2rem;
+    margin-left: 20px;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.mode {
+    position: relative;
+    width: 44px;
+    height: 24px;
+    right: -46px;
+    top: 0px;
+    background: rgba(22, 24, 35, 0.12);
+    border-radius: 100px;
+    transition: all 0.4s cubic-bezier(0.075, 0.82, 0.165, 1) 0s;
+    &:hover {
+        background: rgba(22, 24, 35, 0.16)
+    }
+}
+
+.isDarkMode {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.08)), rgb(11, 224, 155) !important;
+}
+
+.mode-btn {
+    position: absolute;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    left: 2px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 100px;
+    background: rgb(255, 255, 255);
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 1px 2px;
+    transition: all 0.4s cubic-bezier(0.075, 0.82, 0.165, 1) 0s;
+}
+
+.actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+// action loggged
+
+.messages-btn {
+    background-color: transparent;
+    font-size: 2.2rem;
+    margin-left: 16px;
+    cursor: pointer;
+}
+
+.inbox-btn {
+    background-color: transparent;
+    font-size: 2.2rem;
+    margin-left: 16px;
+    cursor: pointer;
+}
+
+.user-avatar {
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    object-fit: cover;
+}

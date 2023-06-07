@@ -1,0 +1,123 @@
+.menu-list {
+    display: flex;
+    margin-top: 10px;
+    margin-top: 2px;
+    position: relative;
+    right: -18px;
+    width: 223px;
+    .menu-item {
+        margin: 0;
+    }
+
+    &:first-child {
+        border-top-left-radius: 8px !important;
+        border-top-right-radius: 8px !important;
+    }
+}
+
+.menu-item {
+    display: flex;
+    font-size: 1.6rem;
+    background-color: var(--white-color);
+    height: 42px;
+    padding: 10px 8px 10px 16px;
+    border: none;
+    font-weight: 600;
+    width: 100%;
+    justify-content: flex-start;
+    border-radius: 0;
+    &:hover {
+        background-color: rgba(22, 24, 35, 0.03);
+    }
+}
+
+// Header menu
+.header {
+    display: flex;
+    height: 50px;
+    align-items: center;
+    position: relative;
+    margin-top: -10px;
+    cursor: pointer;
+}
+
+.back-btn {
+    background-color: transparent;
+    opacity: 0.8;
+    font-size: 20px;
+    padding-left: 24px;
+    cursor: pointer;
+}
+
+.header-title {
+    font-size: 1.8rem;
+    font-weight: 500;
+    text-align: center;
+    position: absolute;
+    right: 50%;
+    transform: translateX(50%);
+}
+
+.seperato {
+    border-top: 1px solid rgba(22, 24, 35, 0.12);
+}
+
+.mode {
+    position: relative;
+    width: 44px;
+    height: 24px;
+    right: -46px;
+    top: 0px;
+    background: rgba(22, 24, 35, 0.12);
+    border-radius: 100px;
+    transition: all 0.4s cubic-bezier(0.075, 0.82, 0.165, 1) 0s;
+    &:hover {
+        background: rgba(22, 24, 35, 0.16);
+    }
+}
+
+.isDarkMode {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.08)), rgb(11, 224, 155) !important;
+}
+
+.mode-btn-light {
+    position: absolute;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    left: 2px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 100px;
+    background: rgb(255, 255, 255);
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 1px 2px;
+    transition: all 0.4s cubic-bezier(0.075, 0.82, 0.165, 1) 0s;
+}
+
+.mode-btn-dark {
+    position: absolute;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    left: calc(100% - 2px);
+    top: 50%;
+    transform: translate(-100%, -50%);
+    border-radius: 100px;
+    background: rgb(255, 255, 255);
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 1px 2px;
+    transition: all 0.4s cubic-bezier(0.075, 0.82, 0.165, 1) 0s;
+}
+
+
+.menu-render-item {
+    max-height: 500px;
+    overflow-y: auto;
+}
