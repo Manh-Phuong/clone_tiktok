@@ -107,7 +107,7 @@ function Search() {
                         }
                     }}
                     onFocus={() => setShowResult(true)}
-                    placeholder="Tìm kiếm"
+                    placeholder="Search"
                 ></input>
                 {!!searchValue && !loading && (
                     <button className={cx('clear')} onClick={handleClear}>

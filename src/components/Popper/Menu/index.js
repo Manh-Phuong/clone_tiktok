@@ -63,7 +63,7 @@ function Menu({ items = [], children, hideOnClick = false, onChange = defaultFn 
                 <div className={cx('menu-list')} tabIndex="-1" {...attrs}>
                     <PopperWrapper className={cx('menu-popper')}>
                         {state.length > 1 && (
-                            <HeaderMenu title="Language" onBack={() => setState(state.splice(0, state.length - 1))} />
+                            <HeaderMenu title={current.title} onBack={() => setState(state.splice(0, state.length - 1))} />
                         )}
                         <div className={cx('menu-render-item')}>{renderItems()}</div>
                     </PopperWrapper>
