@@ -10,6 +10,7 @@ import { ForYouIcon,
     ExploreActiveIcon, 
     LiveIcon, 
     LiveActiveIcon } from '~/components/Icons';
+import SidebarAccount from '~/components/SidebarAccount/SidebarAccount';
 
 const cx = classNames.bind(styles);
 
@@ -22,6 +23,9 @@ function Sidebar() {
                 <MenuItem title = 'Explore' to={routesConfig.explore} icon={<ExploreIcon />} activeIcon={<ExploreActiveIcon />} />
                 <MenuItem title = 'LIVE' to={routesConfig.live} icon={<LiveIcon />} activeIcon={<LiveActiveIcon />} />
             </Menu>
+            <SidebarAccount title='Suggested accounts'/>
+            <SidebarAccount title='Suggested accounts'/>
+            <SidebarAccount title='Suggested accounts'/>
         </aside>
     );
 }

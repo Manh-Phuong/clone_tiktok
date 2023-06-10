@@ -1,0 +1,70 @@
+.border-top {
+    border-top: 1px solid rgba(22, 24, 35, .12);
+    margin: 0 12px;
+}
+
+.wrapper {
+    margin-left: 4px;
+    padding: 16px 0;
+}
+
+
+.title {
+    margin-left: 8px;
+    color: var(--text-side-bar);
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.mort-btn {
+    margin-left: 8px;
+    color: var(--primary);
+    font-weight: 600;
+    font-size: 1.4rem;
+    margin-top: 9px;
+    cursor: pointer;
+    max-width: 56px;
+}
+
+.account-item {
+    display: flex;
+    height: 48px;
+    padding: 8px;
+    cursor: pointer;
+    transition: background-color ease-in-out 200ms;
+
+    &:hover {
+        background: rgba(22, 24, 35, 0.03);
+        border-radius: 4px;
+    }
+}
+
+.avatar {
+    min-width: 32px;
+    min-height: 32px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 12px;
+}
+
+.info {
+    line-height: 2.2rem;
+}
+
+.nickname {
+    font-size: 1.6rem;
+    font-weight: 500;
+}
+
+.check-icon {
+    color: rgb(32, 213, 236);
+    margin-left: 2px;
+}
+
+.full-name {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--min-text-color);
+    line-height: 1.2rem;
+}

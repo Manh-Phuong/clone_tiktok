@@ -4,6 +4,7 @@
     color: rgba(22, 24, 35, 1);
     height: 48px;
     padding-left: 12px;
+    margin-bottom: 8px;
     transition: background-color ease-in-out 200ms;
     &.active {
         color: var(--primary);
@@ -11,6 +12,7 @@
 
     &:hover {
         background: rgba(22, 24, 35, .03);
+        border-radius: 4px;
     }
 }
 

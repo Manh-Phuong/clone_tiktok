@@ -1,0 +1,66 @@
+.wrapper {
+    padding: 10px 20px;
+    width: 320px;
+    height: 152px;
+    
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    align-items: center;
+}
+
+.avatar {
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    min-height: 44px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.follow-label {
+    text-align: center;
+}
+
+.body {
+    line-height: 2.2rem;
+}
+
+.nickname {
+    font-size: 1.8rem;
+    font-weight: 500;
+    line-height: 2.2rem;
+}
+
+.check-icon {
+    color: rgb(32, 213, 236);
+    margin-left: 2px;
+}
+
+.full-name {
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 2rem;
+}
+
+.footer {
+    display: flex;
+    margin-top: 8px;
+    line-height: 2.2rem;
+}
+
+.footer-number {
+    margin-right: 6px;
+}
+
+.footer-label {
+    margin-right: 12px;
+}
+
+.footer-label + .footer-number + .footer-label {
+    margin-right: 0px;
+}
+

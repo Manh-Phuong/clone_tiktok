@@ -1,4 +1,5 @@
 {
+  "homepage": "https://manh-phuong.github.io/clone_tiktok",
   "name": "clone_tiktok",
   "version": "0.1.0",
   "private": true,
@@ -25,6 +26,8 @@
   },
   "scripts": {
     "start": "react-app-rewired start",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "build": "react-app-rewired build",
     "test": "react-app-rewired test",
     "eject": "react-app-rewired eject"
@@ -49,6 +52,7 @@
   },
   "devDependencies": {
     "babel-plugin-module-resolver": "^5.0.0",
+    "gh-pages": "^5.0.0",
     "sass": "^1.62.1"
   }
 }

@@ -4,6 +4,7 @@
     background-color: var(--white-color);
     box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 1px;
     position: fixed;
+    z-index: 9999;
 }
 
 .inner {
