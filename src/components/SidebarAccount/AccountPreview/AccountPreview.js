@@ -8,28 +8,30 @@ import styles from './AccountPreview.module.scss';
 
 const cx = classNames.bind(styles);
 
-function AccountPreview() {
+function AccountPreview({ first_name, last_name, nickname, avatar, tick, likes_count, followings_count, followers_count }) {
     return (
         <div className={cx('wrapper')}>
             <div className={cx('header')}>
                 <Image
                     className={cx('avatar')}
-                    alt="avatar preview"
-                    src="https://p16-sign-sg.tiktokcdn.com/aweme/100x100/tos-alisg-avt-0068/850df4c51191c11100d8aa62251e9bcf.jpeg?x-expires=1686297600&x-signature=hEq9ueW4kNLxIouvH%2FjR8QkIGBQ%3D"
+                    alt="avatar"
+                    src={avatar}
                 />
-                <Button primary className={cx('preview-btn')}>{<p className={cx('follow-label')}>Follow</p>}</Button>
+                <Button primary className={cx('preview-btn')}>
+                    {<p className={cx('follow-label')}>Follow</p>}
+                </Button>
             </div>
             <div className={cx('body')}>
                 <div className={cx('nickname')}>
-                    <strong>manhphuong2311</strong>
-                    <FontAwesomeIcon className={cx('check-icon')} icon={faCheckCircle} />
+                    <strong>{nickname}</strong>
+                    {tick && <FontAwesomeIcon className={cx('check-icon')} icon={faCheckCircle} />}
                 </div>
-                <p className={cx('full-name')}>Nguyễn Mạnh Phương</p>
+                <p className={cx('full-name')}>{`${first_name} ${last_name}`}</p>
             </div>
             <div className={cx('footer')}>
-                <strong className={cx('footer-number')}>9.2M</strong>
+                <strong className={cx('footer-number')}>{followers_count}</strong>
                 <p className={cx('footer-label')}>Followers</p>
-                <strong className={cx('footer-number')}>780.6M</strong>
+                <strong className={cx('footer-number')}>{likes_count}</strong>
                 <p className={cx('footer-label')}>Likes</p>
             </div>
         </div>

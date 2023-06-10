@@ -249,7 +249,7 @@ function Header() {
                             {currentUser && (
                                 <Image
                                     className={cx('user-avatar')}
-                                    src="https://sp.yimg.com/ib/th?id=OIP.hwd5nqbtu8La9yZlXfNZXwCoEs&pid=Api&w=148&h=148&c=7&dpr=2&rs=1"
+                                    src="https://tse4.mm.bing.net/th?id=OIP.lRHjxwSYApPPN3bchHpfzQHaD3&pid=Api&P=0&h=180"
                                     alt="avatar profile"
                                 ></Image>
                             )}

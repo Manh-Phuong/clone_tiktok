@@ -17,7 +17,7 @@
     margin-bottom: 8px;
 }
 
-.mort-btn {
+.more-btn {
     margin-left: 8px;
     color: var(--primary);
     font-weight: 600;
@@ -26,6 +26,17 @@
     cursor: pointer;
     max-width: 56px;
 }
+
+.less-btn {
+    margin-left: 8px;
+    color: var(--primary);
+    font-weight: 600;
+    font-size: 1.4rem;
+    margin-top: 9px;
+    cursor: pointer;
+    max-width: 66px;
+}
+
 
 .account-item {
     display: flex;
@@ -43,6 +54,8 @@
 .avatar {
     min-width: 32px;
     min-height: 32px;
+    max-width: 32px;
+    max-height: 32px;
     object-fit: cover;
     border-radius: 50%;
     margin-right: 12px;

@@ -1,11 +1,38 @@
 .wrapper {
     //width: 15.625%;
     width: 22%;
-    min-height: 1000px;
     margin-top: 60px;
     padding: 21px 0 26px 0px;
     position: fixed;
     overflow-y: scroll;
     top: 0;
     bottom: 0;
+}
+
+.border-top {
+    border-top: 1px solid rgba(22, 24, 35, .12);
+    margin: 0 12px 20px 12px;
+}
+
+.footer-sidebar {
+    padding-left: 12px;
+}
+
+.footer-row {
+    list-style: none;
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.link-label {
+    color: #8a8b91 !important;
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-top: 5px;
+    margin-right: 12px;
+}
+
+.link-label:hover {
+    text-decoration: underline;
+
 }

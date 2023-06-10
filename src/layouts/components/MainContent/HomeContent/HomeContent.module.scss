@@ -28,6 +28,7 @@
 
 .author {
     line-height: 2.2rem;
+    max-width: 500px;
 }
 
 .author-link {
@@ -70,6 +71,7 @@
 
 .tag {
     line-height: 2.2rem;
+    max-width: 500px;
 }
 
 .tag-name {
@@ -124,12 +126,11 @@
 }
 
 .video-post-source {
-    width: auto; 
+    width: auto;
     max-width: 580px;
-    height: 100%; 
-    object-fit: cover; 
+    height: 100%;
+    object-fit: cover;
 }
-
 
 // item
 .item-post {
@@ -151,7 +152,7 @@
     max-width: 48px;
     min-height: 48px;
     border-radius: 50%;
-    background-color: rgba(22, 24, 35, .06);
+    background-color: rgba(22, 24, 35, 0.06);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -174,3 +175,105 @@
     font-weight: 600;
 }
 
+// Tippy
+.menu-list {
+    min-width: 280px;
+    min-height: 280px;
+    max-height: 400px;
+    overflow-y: auto;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.wrapper-icon {
+    display: flex;
+    align-items: center;
+    padding: 11px 16px;
+    &:hover {
+        background-color: rgba(22, 24, 35, 0.03);
+    }
+}
+
+.label-icon {
+    font-size: 1.6rem;
+    color: var(--text-color);
+    margin-left: 12px;
+}
+
+.down-btn {
+    background-color: transparent;
+    opacity: 0.8;
+    font-size: 20px;
+    cursor: pointer;
+    text-align: center;
+    width: 100%;
+    &:hover {
+        background-color: rgba(22, 24, 35, 0.03);
+    }
+}
+
+// App
+.app-btn {
+    bottom: 52px;
+    position: fixed;
+    right: 24px;
+    text-align: right;
+    transition: all 0.4s cubic-bezier(0.65, 0, 0.35, 1);
+    z-index: 100000000;
+}
+
+.up-btn {
+    width: 32px;
+    height: 32px;
+    background-color: var(--primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 0;
+    margin-top: 12px;
+    cursor: pointer;
+}
+
+.showApp {
+    bottom: 12px;
+}
+
+.download-app {
+    max-width: 280px;
+    max-height: 120px;
+    max-height: 400px;
+    // overflow-y: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    background-color: var(--white-color);
+    cursor: pointer;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.download-item {
+    font-size: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    
+}
+
+.download-label {
+    margin-left: 20px;
+}
+
+.border-top {
+    width: 100%;
+    border-top: 1px solid #e6e5e5;
+    margin: 10px 0;
+}
+
+.cancel-download {
+    position: relative;
+    top: -46px;
+    right: -10px;
+}

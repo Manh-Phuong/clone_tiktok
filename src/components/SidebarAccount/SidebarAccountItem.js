@@ -11,17 +11,41 @@ import AccountPreview from './AccountPreview';
 
 const cx = classNames.bind(styles);
 
-function SidebarAccountItem() {
+function SidebarAccountItem({ data }) {
+    var first_name, last_name, nickname, avatar, tick, followings_count, followers_count, likes_count;
+    if (data && typeof data === 'object') {
+        //console.log(Object.keys(data));
+        //console.log(data['file_url']);
+        first_name = data.first_name;
+        last_name = data.last_name;
+        nickname = data.nickname;
+        avatar = data.avatar;
+        tick = data.tick;
+        followings_count = data.followings_count;
+        followers_count = data.followers_count;
+        likes_count = data.likes_count;
+    } else {
+        console.log('Invalid data object');
+    }
 
     const renderPreview = (attrs) => {
         return (
-            <div tabIndex='-1' {...attrs}>
+            <div tabIndex="-1" {...attrs}>
                 <PopperWrapper>
-                    <AccountPreview />
+                    <AccountPreview
+                        first_name={first_name}
+                        last_name={last_name}
+                        nickname={nickname}
+                        avatar={avatar}
+                        tick={tick}
+                        likes_count={likes_count}
+                        followings_count = {followings_count}
+                        followers_count = {followers_count}
+                    />
                 </PopperWrapper>
             </div>
-        )
-    }
+        );
+    };
 
     return (
         <div>
@@ -35,19 +59,15 @@ function SidebarAccountItem() {
                 render={renderPreview}
             >
                 <div className={cx('account-item')}>
-                        <Image
-                            className={cx('avatar')}
-                            alt="avatar sidebar"
-                            src="https://p16-sign-sg.tiktokcdn.com/aweme/100x100/tos-alisg-avt-0068/850df4c51191c11100d8aa62251e9bcf.jpeg?x-expires=1686297600&x-signature=hEq9ueW4kNLxIouvH%2FjR8QkIGBQ%3D"
-                        />
-                        <div className={cx('info')}>
-                            <div className={cx('nickname')}>
-                                <strong>manhphuong2311</strong>
-                                <FontAwesomeIcon className={cx('check-icon')} icon={faCheckCircle} />
-                            </div>
-                            <p className={cx('full-name')}>Nguyễn Mạnh Phương</p>
+                    <Image className={cx('avatar')} alt="avatar" src={avatar} />
+                    <div className={cx('info')}>
+                        <div className={cx('nickname')}>
+                            <strong>{nickname}</strong>
+                            {tick && <FontAwesomeIcon className={cx('check-icon')} icon={faCheckCircle} />}
                         </div>
+                        <p className={cx('full-name')}>{`${first_name} ${last_name}`}</p>
                     </div>
+                </div>
             </Tippy>
         </div>
     );

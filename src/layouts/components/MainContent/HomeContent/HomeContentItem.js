@@ -4,12 +4,28 @@ import PropTypes from 'prop-types';
 import Tippy from '@tippyjs/react/headless';
 import { Wrapper as PopperWrapper } from '~/components/Popper';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCheckCircle, faCommentDots, faMusic } from '@fortawesome/free-solid-svg-icons';
+import { faCheckCircle, faChevronDown, faChevronUp, faCommentDots, faMusic } from '@fortawesome/free-solid-svg-icons';
 
 import Image from '~/components/Image';
 // import AccountPreview from './AccountPreview';
 import Button from '~/components/Button';
-import { CommentIcon, LikeIcon, MarkIcon, ShareIcon, MusicIcon } from '~/components/Icons';
+import {
+    CommentIcon,
+    LikeIcon,
+    MarkIcon,
+    ShareIcon,
+    MusicIcon,
+    DipIcon,
+    SendIcon,
+    FacebookIcon,
+    WhatAppIcon,
+    CopyIcon,
+    TwitterIcon,
+    LinkedInIcon,
+    RedditIcon,
+    TelegramIcon,
+} from '~/components/Icons';
+import { useState } from 'react';
 
 const cx = classNames.bind(styles);
 
@@ -28,7 +44,7 @@ function HomeContentItem({ data }) {
         tick;
     if (data && typeof data === 'object') {
         //console.log(Object.keys(data));
-        console.log(data['file_url']);
+        //console.log(data['file_url']);
         file_url = data['file_url'];
         music = data.music;
         is_like = data.is_like;
@@ -44,14 +60,18 @@ function HomeContentItem({ data }) {
     } else {
         console.log('Invalid data object');
     }
+    const [showShare, setShowShare] = useState(false);
+    const handleShowShare = () => {
+        setShowShare(true);
+    };
+    const handleHiddenShare = () => {
+        setShowShare(false);
+    };
 
     return (
         <div className={cx('wrapper')}>
             <div>
-                <Image
-                    className={cx('avatar')}
-                    src={avatar}
-                />
+                <Image className={cx('avatar')} src={avatar} />
             </div>
             <div className={cx('content')}>
                 <div className={cx('header-post')}>
@@ -71,7 +91,7 @@ function HomeContentItem({ data }) {
                                 word.startsWith('#') ? (
                                     <span key={index}>
                                         <a className={cx('tag-link')} href="/">
-                                            <strong className={cx('tag-link-label')}>{word}{' '}</strong>
+                                            <strong className={cx('tag-link-label')}>{word} </strong>
                                         </a>
                                     </span>
                                 ) : (
@@ -80,13 +100,15 @@ function HomeContentItem({ data }) {
                             )}
                         </span>
                     </div>
-                   {!!music && <div className={cx('video-music')}>
-                        {/* <FontAwesomeIcon icon={faMusic} /> */}
-                        <MusicIcon />
-                        <a className={cx('video-music-label')} href="/">
-                            {music}
-                        </a>
-                    </div>}
+                    {!!music && (
+                        <div className={cx('video-music')}>
+                            {/* <FontAwesomeIcon icon={faMusic} /> */}
+                            <MusicIcon />
+                            <a className={cx('video-music-label')} href="/">
+                                {music}
+                            </a>
+                        </div>
+                    )}
                 </div>
                 <div className={cx('body-post')}>
                     <div className={cx('video-post')}>
@@ -123,14 +145,83 @@ function HomeContentItem({ data }) {
                             </div>
                             <span className={cx('mark-count', 'count')}>{shares_count}</span>
                         </div>
-                        <div className={cx('wrapper-item')}>
-                            <div className={cx('background-item')}>
-                                <p className={cx('share-icon')}>
-                                    <ShareIcon />
-                                </p>
-                            </div>
-                            <span className={cx('share-count', 'count')}>{shares_count}</span>
-                        </div>
+
+                        <Tippy                         
+                            offset={[-10, 6]}
+                            interactive
+                            delay={[0, 700]}
+                            //hideOnClick={hideOnClick}
+                            placement="top-start"
+                            appendTo="parent"
+                            render={(attrs) => (
+                                <div className={cx('menu-list')} tabIndex="-1" {...attrs}>
+                                    <PopperWrapper className={cx('menu-popper')}>
+                                        <div className={cx('wrapper-icon')}>
+                                            <DipIcon />
+                                            <span className={cx('label-icon')}>Embed</span>
+                                        </div>
+                                        <div className={cx('wrapper-icon')}>
+                                            <SendIcon />
+                                            <span className={cx('label-icon')}>Send to friends</span>
+                                        </div>
+                                        <div className={cx('wrapper-icon')}>
+                                            <FacebookIcon />
+                                            <span className={cx('label-icon')}>Share to Facebook</span>
+                                        </div>
+                                        <div className={cx('wrapper-icon')}>
+                                            <WhatAppIcon />
+                                            <span className={cx('label-icon')}>Share to WhatsApp</span>
+                                        </div>
+                                        <div className={cx('wrapper-icon')}>
+                                            <CopyIcon />
+                                            <span className={cx('label-icon')}>Copy link</span>
+                                        </div>
+                                        {showShare && (
+                                            <>
+                                                <div className={cx('wrapper-icon')}>
+                                                    <TwitterIcon />
+                                                    <span className={cx('label-icon')}>Share to Twitter</span>
+                                                </div>
+                                                <div className={cx('wrapper-icon')}>
+                                                    <LinkedInIcon />
+                                                    <span className={cx('label-icon')}>Share to LinkedIn</span>
+                                                </div>
+                                                <div className={cx('wrapper-icon')}>
+                                                    <RedditIcon />
+                                                    <span className={cx('label-icon')}>Share to Reddit</span>
+                                                </div>
+                                                <div className={cx('wrapper-icon')}>
+                                                    <TelegramIcon />
+                                                    <span className={cx('label-icon')}>Share to Telegram</span>
+                                                </div>
+                                            </>
+                                        )}
+                                        {!showShare && (
+                                            <button className={cx('down-btn')} onClick={handleShowShare}>
+                                                <FontAwesomeIcon icon={faChevronDown} />
+                                            </button>
+                                        )}
+                                        {showShare && (
+                                            <button className={cx('down-btn')} onClick={handleHiddenShare}>
+                                                <FontAwesomeIcon icon={faChevronUp} />
+                                            </button>
+                                        )}
+                                    </PopperWrapper>
+                                </div>
+                            )}
+                            // onHide={() => setState((prev) => prev.slice(0, 1))}
+                        >
+                            <p>
+                                <div className={cx('wrapper-item')}>
+                                    <div className={cx('background-item')}>
+                                        <p className={cx('share-icon')}>
+                                            <ShareIcon />
+                                        </p>
+                                    </div>
+                                    <span className={cx('share-count', 'count')}>{shares_count}</span>
+                                </div>
+                            </p>
+                        </Tippy>
                     </div>
                 </div>
             </div>
