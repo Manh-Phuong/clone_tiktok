@@ -348,41 +348,49 @@ export const MarkIcon = ({ width = '2.4rem', height = '2.4rem', className }) => 
 
 export const ShareIcon = ({ width = '2.4rem', height = '2.4rem', className }) => (
     <svg xmlns="http://www.w3.org/2000/svg" className={className} width={width} height={height} fill="currentColor">
-        
-            <path
-                fill="currentColor"
-                fill-rule="evenodd"
-                d="M10.938 3.175a.674.674 0 0 1 1.138-.488l6.526 6.215c.574.547.554 1.47-.043 1.991l-6.505 5.676a.674.674 0 0 1-1.116-.508V13.49s-6.985-1.258-9.225 2.854c-.209.384-1.023.518-.857-1.395.692-3.52 2.106-9.017 10.082-9.017V3.175Z"
-                clip-rule="evenodd"
-            ></path>
-            <path
-                fill="#161823"
-                fill-rule="evenodd"
-                d="m15.754 6.212 1.295 2.59a1.122 1.122 0 0 1-.268 1.349l-5.799 5.042s-.28 1.403.562 1.403c.842 0 7.578-6.174 7.578-6.174s.28-.842-.561-1.684c-.843-.842-2.807-2.526-2.807-2.526Z"
-                clip-rule="evenodd"
-                opacity=".03"
-            ></path>
-            <path
-                fill="url(#pc-share-44d9fe83_a)"
-                fill-rule="evenodd"
-                d="M10.937 6.23v7.297s-6.683-.942-8.777 2.246C.146 18.839.331 12.309 3.363 9.057c3.033-3.252 7.574-2.827 7.574-2.827Z"
-                clip-rule="evenodd"
-                opacity=".09"
-            ></path>
-            <defs>
-                <radialGradient
-                    id="pc-share-44d9fe83_a"
-                    cx="0"
-                    cy="0"
-                    r="1"
-                    gradientTransform="rotate(-113.046 11.628 5.43) scale(8.93256 8.78076)"
-                    gradientUnits="userSpaceOnUse"
-                >
-                    <stop></stop>
-                    <stop offset=".995" stop-opacity=".01"></stop>
-                    <stop offset="1" stop-opacity=".01"></stop>
-                </radialGradient>
-            </defs>
- 
+        <path
+            fill="currentColor"
+            fill-rule="evenodd"
+            d="M10.938 3.175a.674.674 0 0 1 1.138-.488l6.526 6.215c.574.547.554 1.47-.043 1.991l-6.505 5.676a.674.674 0 0 1-1.116-.508V13.49s-6.985-1.258-9.225 2.854c-.209.384-1.023.518-.857-1.395.692-3.52 2.106-9.017 10.082-9.017V3.175Z"
+            clip-rule="evenodd"
+        ></path>
+        <path
+            fill="#161823"
+            fill-rule="evenodd"
+            d="m15.754 6.212 1.295 2.59a1.122 1.122 0 0 1-.268 1.349l-5.799 5.042s-.28 1.403.562 1.403c.842 0 7.578-6.174 7.578-6.174s.28-.842-.561-1.684c-.843-.842-2.807-2.526-2.807-2.526Z"
+            clip-rule="evenodd"
+            opacity=".03"
+        ></path>
+        <path
+            fill="url(#pc-share-44d9fe83_a)"
+            fill-rule="evenodd"
+            d="M10.937 6.23v7.297s-6.683-.942-8.777 2.246C.146 18.839.331 12.309 3.363 9.057c3.033-3.252 7.574-2.827 7.574-2.827Z"
+            clip-rule="evenodd"
+            opacity=".09"
+        ></path>
+        <defs>
+            <radialGradient
+                id="pc-share-44d9fe83_a"
+                cx="0"
+                cy="0"
+                r="1"
+                gradientTransform="rotate(-113.046 11.628 5.43) scale(8.93256 8.78076)"
+                gradientUnits="userSpaceOnUse"
+            >
+                <stop></stop>
+                <stop offset=".995" stop-opacity=".01"></stop>
+                <stop offset="1" stop-opacity=".01"></stop>
+            </radialGradient>
+        </defs>
+    </svg>
+);
+
+export const MusicIcon = ({ width = '2.4rem', height = '2.4rem', className }) => (
+    <svg width="1em" height="1em" viewBox="0 0 48 48" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path
+            fillRule="evenodd"
+            clipRule="evenodd"
+            d="M35.0001 10.7587C35.0001 10.1169 34.4041 9.64129 33.7784 9.78359L17.7902 13.4192C17.335 13.5227 17.0119 13.9275 17.0119 14.3943V37.9972H17.0109C17.0374 40.1644 14.8022 42.4189 11.612 43.2737C8.05093 44.2279 4.64847 43.0769 4.01236 40.7028C3.37624 38.3288 5.74735 35.6308 9.30838 34.6766C10.606 34.3289 11.8826 34.2608 13.0119 34.4294V14.3943C13.0119 12.0601 14.6271 10.0364 16.9033 9.5188L32.8914 5.88317C36.0204 5.17165 39.0001 7.54986 39.0001 10.7587V33.1191C39.084 35.3108 36.8331 37.6109 33.6032 38.4763C30.0421 39.4305 26.6397 38.2795 26.0036 35.9055C25.3675 33.5315 27.7386 30.8334 31.2996 29.8792C32.5961 29.5319 33.8715 29.4635 35.0001 29.6316V10.7587Z"
+        ></path>
     </svg>
 );

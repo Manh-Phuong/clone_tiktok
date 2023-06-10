@@ -3,47 +3,90 @@ import styles from './HomeContent.module.scss';
 import PropTypes from 'prop-types';
 import Tippy from '@tippyjs/react/headless';
 import { Wrapper as PopperWrapper } from '~/components/Popper';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCheckCircle, faCommentDots, faMusic } from '@fortawesome/free-solid-svg-icons';
 
 import Image from '~/components/Image';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCommentDots } from '@fortawesome/free-solid-svg-icons';
 // import AccountPreview from './AccountPreview';
 import Button from '~/components/Button';
-import { CommentIcon, LikeIcon, MarkIcon, ShareIcon } from '~/components/Icons';
+import { CommentIcon, LikeIcon, MarkIcon, ShareIcon, MusicIcon } from '~/components/Icons';
 
 const cx = classNames.bind(styles);
 
-function HomeContentItem() {
+function HomeContentItem({ data }) {
+    var file_url,
+        music,
+        is_like,
+        likes_count,
+        comments_count,
+        shares_count,
+        description,
+        first_name,
+        last_name,
+        nickname,
+        avatar,
+        tick;
+    if (data && typeof data === 'object') {
+        //console.log(Object.keys(data));
+        console.log(data['file_url']);
+        file_url = data['file_url'];
+        music = data.music;
+        is_like = data.is_like;
+        likes_count = data.likes_count;
+        comments_count = data.comments_count;
+        shares_count = data.shares_count;
+        description = data.description;
+        first_name = data.user.first_name;
+        last_name = data.user.last_name;
+        nickname = data.user.nickname;
+        avatar = data.user.avatar;
+        tick = data.user.tick;
+    } else {
+        console.log('Invalid data object');
+    }
+
     return (
         <div className={cx('wrapper')}>
             <div>
                 <Image
                     className={cx('avatar')}
-                    src="https://p16-sign-useast2a.tiktokcdn.com/tos-useast2a-avt-0068-giso/3ee7b9539de4177fb72ef422aa3acf0c~c5_100x100.jpeg?x-expires=1686531600&x-signature=954GwwrEAiAYQiYj1VoxrAKaP0M%3D"
+                    src={avatar}
                 />
             </div>
             <div className={cx('content')}>
                 <div className={cx('header-post')}>
                     <div className={cx('author')}>
                         <a className={cx('author-link')} href="/">
-                            <h3 className={cx('nick-name')}>manhphuong1702</h3>
-                            <h4 className={cx('full-name')}>Manh Phuong</h4>
+                            <h3 className={cx('nick-name')}>{nickname}</h3>
+                            {tick && <FontAwesomeIcon className={cx('check-icon')} icon={faCheckCircle} />}
+                            <h4 className={cx('full-name')}>{`${first_name} ${last_name}`}</h4>
                         </a>
                     </div>
                     <Button className={cx('button')} small>
                         {<p className={cx('follow-label')}>Follow</p>}
                     </Button>
                     <div className={cx('tag')}>
-                        <span className={cx('tag-name')}>Sky</span>
-                        <a className={cx('tag-link')} href="/">
-                            <strong className={cx('tag-link-label')}>#SonTung</strong>
-                        </a>
+                        <span className={cx('tag-name')}>
+                            {description.split(' ').map((word, index) =>
+                                word.startsWith('#') ? (
+                                    <span key={index}>
+                                        <a className={cx('tag-link')} href="/">
+                                            <strong className={cx('tag-link-label')}>{word}{' '}</strong>
+                                        </a>
+                                    </span>
+                                ) : (
+                                    word + ' '
+                                ),
+                            )}
+                        </span>
                     </div>
-                    <div className={cx('video-music')}>
+                   {!!music && <div className={cx('video-music')}>
+                        {/* <FontAwesomeIcon icon={faMusic} /> */}
+                        <MusicIcon />
                         <a className={cx('video-music-label')} href="/">
-                            Making my way
+                            {music}
                         </a>
-                    </div>
+                    </div>}
                 </div>
                 <div className={cx('body-post')}>
                     <div className={cx('video-post')}>
@@ -56,7 +99,8 @@ function HomeContentItem() {
                             allowfullscreen
                         ></iframe> */}
                         <video className={cx('video-post-source')} loop="" controls>
-                            <source src="https://files.fullstack.edu.vn/f8-tiktok/videos/1912-6413eb55ed5ec.mp4" />
+                            {/* <source src="https://files.fullstack.edu.vn/f8-tiktok/videos/1912-6413eb55ed5ec.mp4" /> */}
+                            <source src={file_url} />
                         </video>
                     </div>
 
@@ -65,19 +109,19 @@ function HomeContentItem() {
                             <div className={cx('background-item')}>
                                 <LikeIcon />
                             </div>
-                            <span className={cx('like-count', 'count')}>78.6K</span>
+                            <span className={cx('like-count', 'count')}>{likes_count}</span>
                         </div>
                         <div className={cx('wrapper-item')}>
                             <div className={cx('background-item')}>
                                 <FontAwesomeIcon className={cx('comment-icon')} icon={faCommentDots} />
                             </div>
-                            <span className={cx('comment-count', 'count')}>2258</span>
+                            <span className={cx('comment-count', 'count')}>{comments_count}</span>
                         </div>
                         <div className={cx('wrapper-item')}>
                             <div className={cx('background-item')}>
                                 <MarkIcon />
                             </div>
-                            <span className={cx('mark-count', 'count')}>9969</span>
+                            <span className={cx('mark-count', 'count')}>{shares_count}</span>
                         </div>
                         <div className={cx('wrapper-item')}>
                             <div className={cx('background-item')}>
@@ -85,7 +129,7 @@ function HomeContentItem() {
                                     <ShareIcon />
                                 </p>
                             </div>
-                            <span className={cx('share-count', 'count')}>18.5K</span>
+                            <span className={cx('share-count', 'count')}>{shares_count}</span>
                         </div>
                     </div>
                 </div>

@@ -4,6 +4,8 @@
     padding-top: 20px;
     position: relative;
     width: 692px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e9e8e8;
 }
 
 .avatar {
@@ -30,10 +32,16 @@
 
 .author-link {
     display: flex;
-
+    align-items: center;
     &:hover .nick-name {
         text-decoration: underline;
     }
+}
+
+.check-icon {
+    margin-left: -4px;
+    margin-right: 6px;
+    color: rgb(32, 213, 236);
 }
 
 .nick-name {
@@ -80,6 +88,8 @@
 }
 
 .video-music {
+    display: flex;
+    align-items: center;
     margin: 4px 0 12px 0;
     cursor: pointer;
 
@@ -91,12 +101,14 @@
 .video-music-label {
     text-decoration: none;
     font-weight: 600;
+    margin-left: 6px;
 }
 
 .body-post {
     height: 75vh;
     display: flex;
     position: relative;
+    margin-top: 10px;
 }
 
 .video-post {
@@ -113,6 +125,7 @@
 
 .video-post-source {
     width: auto; 
+    max-width: 580px;
     height: 100%; 
     object-fit: cover; 
 }
