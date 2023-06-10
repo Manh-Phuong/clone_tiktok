@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/static/css/main.7426074a.css",
-    "main.js": "/static/js/main.d3b17ea2.js",
-    "static/js/787.2bb897d9.chunk.js": "/static/js/787.2bb897d9.chunk.js",
-    "static/media/logo.svg": "/static/media/logo.8b5a7195252151fa38f0ac2cac3762f1.svg",
-    "static/media/menuIconLanguage.svg": "/static/media/menuIconLanguage.8bd0c67b1f015e86efd29876da114fa5.svg",
-    "index.html": "/index.html",
-    "main.7426074a.css.map": "/static/css/main.7426074a.css.map",
-    "main.d3b17ea2.js.map": "/static/js/main.d3b17ea2.js.map",
-    "787.2bb897d9.chunk.js.map": "/static/js/787.2bb897d9.chunk.js.map"
+    "main.css": "/clone_tiktok/static/css/main.7426074a.css",
+    "main.js": "/clone_tiktok/static/js/main.868cd0b2.js",
+    "static/js/787.2bb897d9.chunk.js": "/clone_tiktok/static/js/787.2bb897d9.chunk.js",
+    "static/media/logo.svg": "/clone_tiktok/static/media/logo.8b5a7195252151fa38f0ac2cac3762f1.svg",
+    "static/media/menuIconLanguage.svg": "/clone_tiktok/static/media/menuIconLanguage.8bd0c67b1f015e86efd29876da114fa5.svg",
+    "index.html": "/clone_tiktok/index.html",
+    "main.7426074a.css.map": "/clone_tiktok/static/css/main.7426074a.css.map",
+    "main.868cd0b2.js.map": "/clone_tiktok/static/js/main.868cd0b2.js.map",
+    "787.2bb897d9.chunk.js.map": "/clone_tiktok/static/js/787.2bb897d9.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.7426074a.css",
-    "static/js/main.d3b17ea2.js"
+    "static/js/main.868cd0b2.js"
   ]
 }
