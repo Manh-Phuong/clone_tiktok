@@ -7,6 +7,7 @@ import HeaderMenu from './HeaderMenu';
 import { useState } from 'react';
 
 const cx = classNames.bind(styles);
+// const cx2 = classNames.bind(styles2);
 
 const defaultFn = () => {};
 
@@ -27,7 +28,7 @@ function Menu({ items = [], children, hideOnClick = false, onChange = defaultFn 
                             setState((prev) => [...prev, item.children]);
                         } else if (item.DarkMode && item.title === 'Dark mode') {
                             item.iconRight = (
-                                <div width="44px" height="24px" className={cx('mode', 'isDarkMode')}>
+                                <div width="44px" height="24px" className={`${cx('mode', 'isDarkMode')} ${'dark'}`}  data-theme="dark">
                                     <span width="20px" height="20px" className={cx('mode-btn-dark')}></span>
                                 </div>
                             );
@@ -35,7 +36,7 @@ function Menu({ items = [], children, hideOnClick = false, onChange = defaultFn 
                             item.DarkMode = !item.DarkMode;
                         } else if (!item.DarkMode && item.title === 'Dark mode') {
                             item.iconRight = (
-                                <div width="44px" height="24px" className={cx('mode')}>
+                                <div width="44px" height="24px" className={cx('mode')} data-theme="light">
                                     <span width="20px" height="20px" className={cx('mode-btn-light')}></span>
                                 </div>
                             );

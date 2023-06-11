@@ -4,9 +4,13 @@
     margin-top: 60px;
     padding: 21px 0 26px 0px;
     position: fixed;
-    overflow-y: scroll;
+    overflow-y: hidden;
     top: 0;
     bottom: 0;
+    transition: overflow-y 0.3s ease; 
+    &:hover {
+        overflow-y: auto;
+    }
 }
 
 .border-top {

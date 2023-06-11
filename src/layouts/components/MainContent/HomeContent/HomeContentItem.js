@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from 'react';
 import classNames from 'classnames/bind';
 import styles from './HomeContent.module.scss';
 import PropTypes from 'prop-types';
@@ -25,7 +26,6 @@ import {
     RedditIcon,
     TelegramIcon,
 } from '~/components/Icons';
-import { useState } from 'react';
 
 const cx = classNames.bind(styles);
 
@@ -67,6 +67,35 @@ function HomeContentItem({ data }) {
     const handleHiddenShare = () => {
         setShowShare(false);
     };
+
+    // const videoRef = useRef(null);
+    // const [playVideo, setPlayVideo] = useState(false);
+
+    // useEffect(() => {
+    //     const options = {
+    //         root: null,
+    //         rootMargin: '0px',
+    //         threshold: 0.5, // Tỷ lệ màn hình hiển thị video, 0.5 = 50%
+    //     };
+
+    //     const observer = new IntersectionObserver((entries) => {
+    //         entries.forEach((entry) => {
+    //             if (entry.isIntersecting && playVideo) {
+    //                 // Nếu video hiển thị trên màn hình, bật phát tự động
+    //                 videoRef.current.play();
+    //             } else {
+    //                 // Nếu video không hiển thị trên màn hình, tạm dừng phát
+    //                 videoRef.current.pause();
+    //             }
+    //         });
+    //     }, options);
+
+    //     observer.observe(videoRef.current);
+
+    //     return () => {
+    //         observer.unobserve(videoRef.current);
+    //     };
+    // }, []);
 
     return (
         <div className={cx('wrapper')}>
@@ -120,7 +149,8 @@ function HomeContentItem({ data }) {
                             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen
                         ></iframe> */}
-                        <video className={cx('video-post-source')} loop="" controls>
+                        {/* <video ref={videoRef} className={cx('video-post-source')} loop controls> */}
+                        <video className={cx('video-post-source')} loop controls>
                             {/* <source src="https://files.fullstack.edu.vn/f8-tiktok/videos/1912-6413eb55ed5ec.mp4" /> */}
                             <source src={file_url} />
                         </video>
@@ -146,7 +176,7 @@ function HomeContentItem({ data }) {
                             <span className={cx('mark-count', 'count')}>{shares_count}</span>
                         </div>
 
-                        <Tippy                         
+                        <Tippy
                             offset={[-10, 6]}
                             interactive
                             delay={[0, 700]}
